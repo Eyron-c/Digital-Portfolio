@@ -1,4 +1,3 @@
-
 /* =========================
    GENERAL DESIGN
 ========================= */
@@ -152,12 +151,12 @@ nav a:hover {
 
 
 /* =========================
-   PROFILE IMAGE
+   PROFILE IMAGE (MADE BIGGER)
 ========================= */
 
 .home-image {
-    width: 280px;
-    height: 280px;
+    width: 380px;   /* Increased from 280px */
+    height: 380px;  /* Increased from 280px */
     flex-shrink: 0;
 }
 
@@ -210,22 +209,30 @@ nav a:hover {
    EDUCATION
 ========================= */
 
+.education-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: stretch;
+}
+
 .education-card {
     background: white;
     padding: 30px;
-    border-radius: 10px;
-    border-left: 5px solid var(--blue);
+    border-radius: 12px;
+    border-left: 5px solid #347bc1;
     box-shadow: 0 5px 20px #142b4a0c;
 }
 
 .education-card h3 {
-    color: var(--navy);
+    color: #142b4a;
     font-size: 23px;
+    margin-bottom: 10px;
 }
 
 .education-card h4 {
+    color: #347bc1;
     margin-top: 20px;
-    color: var(--blue);
 }
 
 .education-card ul {
@@ -236,6 +243,48 @@ nav a:hover {
     color: var(--blue);
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+.school-image {
+    position: relative;
+    min-height: 350px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #142b4a20;
+}
+
+.school-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s;
+}
+
+.school-image:hover img {
+    transform: scale(1.05);
+}
+
+.school-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px 20px;
+    color: white;
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,0.85)
+    );
+}
+
+.school-caption h3 {
+    color: white;
+}
+
+.school-caption p {
+    font-size: 13px;
 }
 
 
@@ -438,6 +487,90 @@ nav a:hover {
     font-style: italic;
 }
 
+.more-adventures {
+    cursor: pointer;
+}
+
+.more-adventures img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.more-adventures:hover img {
+    transform: scale(1.08);
+}
+
+.more-adventures .gallery-caption span {
+    display: inline-block;
+    margin-top: 10px;
+    background: #347bc1;
+    padding: 7px 13px;
+    border-radius: 5px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   MORE ADVENTURES PAGE
+========================= */
+
+.more-page {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    overflow-y: auto;
+    background: #f5f7fb;
+    padding: 50px 8%;
+}
+
+.more-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    gap: 15px;
+}
+
+.more-header h2 {
+    color: #142b4a;
+    font-size: 35px;
+}
+
+.more-header h2 span {
+    color: #347bc1;
+}
+
+.more-header button {
+    background: #142b4a;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.extra-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.extra-gallery img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.extra-gallery img:hover {
+    transform: scale(1.03);
+}
+
 
 /* =========================
    INTERNSHIP
@@ -551,6 +684,10 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .education-layout {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 @media (max-width: 600px) {
@@ -564,130 +701,11 @@ footer {
         height: 280px;
     }
 
-}
-		
-<div class="gallery-item">
-    <img src="adventure7.jpg" alt="My adventure">
-    <div class="gallery-caption">
-        <h3>My New Adventure</h3>
-        <p>A memory worth keeping.</p>
-    </div>
-</div>
-
-    }
-
-    .gallery-item {
-        height: 280px;
-    }
-
     .home-image {
-        width: 210px;
-        height: 210px;
+        width: 260px;
+        height: 260px;
     }
 
-}
-
-/* MORE ADVENTURES CARD */
-
-.more-adventures {
-    background: linear-gradient(135deg, #142b4a, #347bc1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.more-adventures:hover {
-    transform: translateY(-8px);
-    background: linear-gradient(135deg, #347bc1, #142b4a);
-}
-
-.more-content {
-    text-align: center;
-    color: white;
-    padding: 20px;
-}
-
-.more-icon {
-    font-size: 55px;
-    margin-bottom: 10px;
-}
-
-.more-content h3 {
-    color: white;
-    font-size: 22px;
-}
-
-.more-content p {
-    color: #d9eaff;
-    font-size: 13px;
-    margin: 8px 0 15px;
-}
-
-.more-content span {
-    font-size: 11px;
-    letter-spacing: 2px;
-    font-weight: bold;
-}
-
-/* MORE ADVENTURES PAGE */
-
-.more-page {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    overflow-y: auto;
-    background: #f5f7fb;
-    padding: 50px 8%;
-}
-
-.more-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 35px;
-    gap: 15px;
-}
-
-.more-header h2 {
-    color: #142b4a;
-    font-size: 35px;
-}
-
-.more-header h2 span {
-    color: #347bc1;
-}
-
-.more-header button {
-    background: #142b4a;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.extra-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.extra-gallery img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.extra-gallery img:hover {
-    transform: scale(1.03);
-}
-
-@media(max-width: 600px) {
     .extra-gallery {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -695,121 +713,5 @@ footer {
     .more-page {
         padding: 25px 5%;
     }
-}
 
-/* MORE ADVENTURES COVER */
-
-.more-adventures {
-    cursor: pointer;
-}
-
-.more-adventures img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.5s;
-}
-
-.more-adventures:hover img {
-    transform: scale(1.08);
-}
-
-.more-adventures .gallery-caption span {
-    display: inline-block;
-    margin-top: 10px;
-    background: #347bc1;
-    padding: 7px 13px;
-    border-radius: 5px;
-    font-size: 11px;
-    letter-spacing: 1px;
-}
-
-/* EDUCATION LAYOUT */
-
-.education-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    align-items: stretch;
-}
-
-.education-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    border-left: 5px solid #347bc1;
-    box-shadow: 0 5px 20px #142b4a0c;
-}
-
-.education-card h3 {
-    color: #142b4a;
-    font-size: 23px;
-    margin-bottom: 10px;
-}
-
-.education-card h4 {
-    color: #347bc1;
-    margin-top: 20px;
-}
-
-.education-card ul {
-    padding-left: 20px;
-}
-
-.school-image {
-    position: relative;
-    min-height: 350px;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px #142b4a20;
-}
-
-.school-image img {
-    width: 100%;
-    height: 100%;
-    min-height: 350px;
-    object-fit: cover;
-    display: block;
-    transition: 0.4s;
-}
-
-.school-image:hover img {
-    transform: scale(1.05);
-}
-
-.school-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px 20px 20px;
-    color: white;
-    background: linear-gradient(
-        transparent,
-        rgba(0,0,0,0.85)
-    );
-}
-
-.school-caption h3 {
-    color: white;
-}
-
-.school-caption p {
-    font-size: 13px;
-}
-
-/* MOBILE */
-
-@media (max-width: 800px) {
-    .education-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .school-image {
-        min-height: 280px;
-    }
-
-    .school-image img {
-        min-height: 280px;
-    }
 }
