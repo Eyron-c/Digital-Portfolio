@@ -156,8 +156,10 @@ nav a:hover {
 ========================= */
 
 .home-image {
-    width: 280px;
-    height: 280px;
+    width: 380px;
+    height: 380px;
+    max-width: 80vw;
+    max-height: 80vw;
     flex-shrink: 0;
 }
 
@@ -581,8 +583,8 @@ footer {
     }
 
     .home-image {
-        width: 210px;
-        height: 210px;
+        width: 280px;
+        height: 280px;
     }
 
 }
