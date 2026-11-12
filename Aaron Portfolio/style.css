@@ -555,25 +555,16 @@ footer {
 
 @media (max-width: 600px) {
 
-    .home h1 {
-        font-size: 36px;
-    }
-
-    .home {
-        padding: 60px 7%;
-    }
-
-    .section {
-        padding: 60px 7%;
-    }
-
-    .section h2 {
-        font-size: 28px;
-    }
-
     .skills-grid,
     .gallery-grid {
         grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 280px;
+    }
+
+}
 		
 <div class="gallery-item">
     <img src="adventure7.jpg" alt="My adventure">
